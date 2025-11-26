@@ -9,7 +9,9 @@ async function bootstrap() {
 
   // Bật CORS cho frontend React
   app.enableCors({
-    origin: configService.get('FRONTEND_URL') || 'http://localhost:3000',
+    //origin: configService.get('FRONTEND_URL') || 'http://localhost:3000',
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
