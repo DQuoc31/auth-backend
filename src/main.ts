@@ -24,8 +24,10 @@ async function bootstrap() {
     }),
   );
 
-  const port = configService.get('PORT') || 3001;
-  await app.listen(port);
+  const port = configService.get('PORT') || 3000;
+
+  // Thêm tham số '0.0.0.0' để app lắng nghe mọi IP
+  await app.listen(port, '0.0.0.0');
   console.log(`Ứng dụng đang chạy trên cổng ${port}`);
 }
 bootstrap();
